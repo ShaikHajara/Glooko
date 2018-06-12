@@ -1,6 +1,5 @@
 package com.glooko.views.welcome;
 
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
 import com.glooko.views.BaseView;
@@ -13,19 +12,19 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 public class WelcomeView extends BaseView {
 
 	@AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'Sync')]")
-	WebElement welcomeScreenTitleFirstPage;
+	MobileElement welcomeScreenTitleFirstPage;
 
 	@AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'Easily')]")
-	WebElement welcomeScreenCopyFirstPage;
+	MobileElement welcomeScreenCopyFirstPage;
 
 	@AndroidFindBy(xpath ="//android.widget.TextView[contains(@text,'Activation')]")
-	WebElement welcomeScreenActivationCodeLink;
+	MobileElement welcomeScreenActivationCodeLink;
 
 	@AndroidFindBy(xpath ="//android.widget.TextView[contains(@text,'SIGN UP')]")
-	WebElement signUp;
+	MobileElement signUp;
 
 	@AndroidFindBy(xpath ="//android.widget.TextView[contains(@text,'LOGIN')]")
-	WebElement Login;
+	MobileElement login;
 
 	public WelcomeView(AppiumDriver<MobileElement> driver) {
 		super(driver);
@@ -37,8 +36,8 @@ public class WelcomeView extends BaseView {
 	 */
 
 	public void clickLogin(){
-		log.debug("Clicking on Login button in Welcome screen");
-		Login.click();
+		log.debug("Click on Login button in Welcome screen");
+		login.click();
 	}
 
 

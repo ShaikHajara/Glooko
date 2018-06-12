@@ -1,7 +1,5 @@
 package com.glooko.views.home;
 
-import java.time.Duration;
-
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Reporter;
 
@@ -9,7 +7,6 @@ import com.glooko.views.BaseView;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
-import io.appium.java_client.TouchAction;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
@@ -36,10 +33,9 @@ public class HomeView extends BaseView{
 
 		public void scrollDown(){
 			waitForElement(endElement, 100);
-			TouchAction action=new TouchAction(driver);
-			log.info("Scrolling down in Home screen");
-			action.press(startElement).waitAction(Duration.ofSeconds(10)).moveTo(endElement).release().perform();
-	        log.info("Scrolled down in Home screen");
+			log.info("Scroll down in Home screen");
+			scrollUpOrDownUsingElements(startElement,endElement);
+
 		}
 
 		/**
@@ -48,7 +44,7 @@ public class HomeView extends BaseView{
 
 		public void checkNotification(){
 			swipeNotificationBar();
-			try{
+    		try{
 			if(reminderNotification.isDisplayed()){
 				Reporter.log("Reminder notification available in notification tray",true);
 				reminderNotification.click();
