@@ -30,15 +30,7 @@ public class HistoryTest extends BaseTest{
 	public void clickHistory()
 	{
 		welcomeview.clickLogin();
-		try {
-			loginview.loginToGlooko(ReadExcelData.list.get(0),ReadExcelData.list.get(1));
-		} catch (InvalidFormatException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		loginview.loginToGlooko(ReadExcelData.list.get(0),ReadExcelData.list.get(1));
 		try {
 			historyview.clickHistoryTab();
 		} catch (InvalidFormatException e) {

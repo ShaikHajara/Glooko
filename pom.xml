@@ -19,7 +19,7 @@
 					<configuration>
 						<!-- Suite testng xml file to consider for test execution -->
 						<suiteXmlFiles>
-							<suiteXmlFile>glooko.xml</suiteXmlFile>
+							<suiteXmlFile>src/main/resources/testng/glooko.xml</suiteXmlFile>
 						</suiteXmlFiles>
 					</configuration>
 				</plugin>

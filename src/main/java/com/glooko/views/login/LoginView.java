@@ -15,13 +15,13 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 public class LoginView extends BaseView{
 
 	@AndroidFindBy(xpath="//android.widget.EditText[@index='1']")
-	MobileElement Email;
+	MobileElement email;
 
 	@AndroidFindBy(xpath="//android.widget.EditText[@index='3']")
-	MobileElement Password;
+	MobileElement password;
 
 	@AndroidFindBy(xpath="//android.widget.TextView[contains(@text,'LOG')]")
-	MobileElement LoginBtn;
+	MobileElement loginBtn;
 
 
 	public LoginView(AppiumDriver<MobileElement> driver){
@@ -37,12 +37,15 @@ public class LoginView extends BaseView{
 	 * @throws IOException
 	 * @throws InvalidFormatException
 	 */
-	public void loginToGlooko(String username,String password) throws IOException, InvalidFormatException{
+	public void loginToGlooko(String Username,String Password){
 
-		waitForElement(Email,60);
-		Email.sendKeys(username);
-		Password.sendKeys(password);
-		LoginBtn.click();
+		waitForElement(email,60);
+		log.info("email value is" +" "+Username);
+		email.sendKeys(Username);
+		log.info("Password value is"+" "+Password);
+		password.sendKeys(Password);
+		log.info("Click on Login button");
+		loginBtn.click();
 	}
 
 }
