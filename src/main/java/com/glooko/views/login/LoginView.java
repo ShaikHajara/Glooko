@@ -40,9 +40,15 @@ public class LoginView extends BaseView{
 	public void loginToGlooko(String username,String password) throws IOException, InvalidFormatException{
 
 		waitForElement(Email,60);
+		log.debug("Sending keys for Email field");
+		log.info("Email value is" +" "+username);
 		Email.sendKeys(username);
+		log.debug("Sending keys for Password field");
+		log.info("Password value is"+" "+password);
 		Password.sendKeys(password);
+		log.debug("Clicking on Login button");
 		LoginBtn.click();
+		log.debug("Clicked on Login button");
 	}
 
 }

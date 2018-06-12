@@ -37,8 +37,10 @@ public class HomeView extends BaseView{
 		public void scrollDown(){
 			waitForElement(endElement, 100);
 			TouchAction action=new TouchAction(driver);
+			log.info("Scrolling down in Home screen");
 			action.press(startElement).waitAction(Duration.ofSeconds(10)).moveTo(endElement).release().perform();
-	      }
+	        log.info("Scrolled down in Home screen");
+		}
 
 		/**
 		 *  Method to check Reminder notification in notification tray

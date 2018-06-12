@@ -27,12 +27,14 @@ public class BaseView {
 	public void waitForElement(MobileElement ele,int time)
 
 	{
+		log.info("Waiting for element"+" " +ele.getText());
 		WebDriverWait wait=new WebDriverWait(driver,time);
 		wait.until(ExpectedConditions.visibilityOf(ele));
 
 	}
 
 	public void swipeNotificationBar(){
+		log.info("Swiping notification bar downwards");
 		TouchAction action=new TouchAction(driver);
 	    action.longPress(481, 37, Duration.ofSeconds(20)).moveTo(507, 2233).release().perform();
 
