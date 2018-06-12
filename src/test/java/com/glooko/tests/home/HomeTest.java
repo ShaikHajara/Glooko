@@ -1,8 +1,5 @@
 package com.glooko.tests.home;
 
-import java.io.IOException;
-
-import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -30,15 +27,7 @@ public class HomeTest extends BaseTest{
 	public void checkAndtapNotification(){
 
 		welcomeview.clickLogin();
-		try {
-			loginview.loginToGlooko(ReadExcelData.list.get(0),ReadExcelData.list.get(1));
-		} catch (InvalidFormatException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		loginview.loginToGlooko(ReadExcelData.list.get(0),ReadExcelData.list.get(1));
 		homeview.checkNotification();
 
 	}

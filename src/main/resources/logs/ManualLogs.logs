@@ -1,87 +1,21 @@
-12/06/2018 09:40:44 devpinoyLogger Clicking on Login button in Welcome screen
-12/06/2018 09:40:47 devpinoyLogger Waiting for element Activation Code
-12/06/2018 09:40:48 devpinoyLogger Sending keys for Email field
-12/06/2018 09:40:48 devpinoyLogger Email value is NEW2123@glooko.com
-12/06/2018 09:40:54 devpinoyLogger Sending keys for Password field
-12/06/2018 09:40:54 devpinoyLogger Password value is glooko1@23
-12/06/2018 09:42:03 devpinoyLogger Clicking on Login button in Welcome screen
-12/06/2018 09:42:06 devpinoyLogger Waiting for element Email
-12/06/2018 09:42:06 devpinoyLogger Sending keys for Email field
-12/06/2018 09:42:06 devpinoyLogger Email value is NEW2123@glooko.com
-12/06/2018 09:42:11 devpinoyLogger Sending keys for Password field
-12/06/2018 09:42:11 devpinoyLogger Password value is glooko1@23
-12/06/2018 09:42:17 devpinoyLogger Clicking on Login button
-12/06/2018 09:42:18 devpinoyLogger Clicked on Login button
-12/06/2018 09:42:18 devpinoyLogger Swiping notification bar downwards
-12/06/2018 09:43:41 devpinoyLogger Clicking on Login button in Welcome screen
-12/06/2018 09:46:15 devpinoyLogger Clicking on Login button in Welcome screen
-12/06/2018 09:46:18 devpinoyLogger Waiting for element Email
-12/06/2018 09:46:18 devpinoyLogger Sending keys for Email field
-12/06/2018 09:46:18 devpinoyLogger Email value is NEW2123@glooko.com
-12/06/2018 09:46:24 devpinoyLogger Sending keys for Password field
-12/06/2018 09:46:24 devpinoyLogger Password value is glooko1@23
-12/06/2018 09:46:30 devpinoyLogger Clicking on Login button
-12/06/2018 09:46:30 devpinoyLogger Clicked on Login button
-12/06/2018 09:47:36 devpinoyLogger Clicking on Login button in Welcome screen
-12/06/2018 09:47:39 devpinoyLogger Waiting for element Email
-12/06/2018 09:47:39 devpinoyLogger Sending keys for Email field
-12/06/2018 09:47:39 devpinoyLogger Email value is NEW2123@glooko.com
-12/06/2018 09:47:44 devpinoyLogger Sending keys for Password field
-12/06/2018 09:47:44 devpinoyLogger Password value is glooko1@23
-12/06/2018 09:47:50 devpinoyLogger Clicking on Login button
-12/06/2018 09:47:51 devpinoyLogger Clicked on Login button
-12/06/2018 09:47:51 devpinoyLogger Swiping notification bar downwards
-12/06/2018 09:49:15 devpinoyLogger Clicking on Login button in Welcome screen
-12/06/2018 09:59:55 devpinoyLogger Clicking on Login button in Welcome screen
-12/06/2018 09:59:57 devpinoyLogger Waiting for element Email
-12/06/2018 09:59:58 devpinoyLogger Sending keys for Email field
-12/06/2018 09:59:58 devpinoyLogger Email value is NEW2123@glooko.com
-12/06/2018 10:00:03 devpinoyLogger Sending keys for Password field
-12/06/2018 10:00:03 devpinoyLogger Password value is glooko1@23
-12/06/2018 10:00:09 devpinoyLogger Clicking on Login button
-12/06/2018 10:00:10 devpinoyLogger Clicked on Login button
-12/06/2018 10:01:17 devpinoyLogger Clicking on Login button in Welcome screen
-12/06/2018 10:01:20 devpinoyLogger Waiting for element Email
-12/06/2018 10:01:20 devpinoyLogger Sending keys for Email field
-12/06/2018 10:01:20 devpinoyLogger Email value is NEW2123@glooko.com
-12/06/2018 10:01:26 devpinoyLogger Sending keys for Password field
-12/06/2018 10:01:26 devpinoyLogger Password value is glooko1@23
-12/06/2018 10:01:33 devpinoyLogger Clicking on Login button
-12/06/2018 10:01:33 devpinoyLogger Clicked on Login button
-12/06/2018 10:01:33 devpinoyLogger Swiping notification bar downwards
-12/06/2018 10:02:58 devpinoyLogger Clicking on Login button in Welcome screen
-12/06/2018 10:03:00 devpinoyLogger Waiting for element Email
-12/06/2018 10:03:00 devpinoyLogger Sending keys for Email field
-12/06/2018 10:03:00 devpinoyLogger Email value is NEW2123@glooko.com
-12/06/2018 10:03:06 devpinoyLogger Sending keys for Password field
-12/06/2018 10:03:06 devpinoyLogger Password value is glooko1@23
-12/06/2018 10:03:12 devpinoyLogger Clicking on Login button
-12/06/2018 10:03:13 devpinoyLogger Clicked on Login button
-12/06/2018 14:58:03 devpinoyLogger Clicking on Login button in Welcome screen
-12/06/2018 14:58:07 devpinoyLogger Waiting for element Located by Locator map: 
+12/06/2018 15:42:38 devpinoyLogger Click on Login button in Welcome screen
+12/06/2018 15:42:41 devpinoyLogger Waiting for element Located by Locator map: 
 - native content: "By.chained({By.xpath: //android.widget.EditText[@index='1']})" 
 - html content: "by id or name "email""
-12/06/2018 14:58:07 devpinoyLogger email value is NEW2123@glooko.com
-12/06/2018 14:58:12 devpinoyLogger Password value is glooko1@23
-12/06/2018 14:58:18 devpinoyLogger Click on Login button
-12/06/2018 14:59:27 devpinoyLogger Clicking on Login button in Welcome screen
-12/06/2018 14:59:29 devpinoyLogger Waiting for element Located by Locator map: 
+12/06/2018 15:42:41 devpinoyLogger email value is NEW2123@glooko.com
+12/06/2018 15:42:47 devpinoyLogger Password value is glooko1@23
+12/06/2018 15:42:52 devpinoyLogger Click on Login button
+12/06/2018 15:43:56 devpinoyLogger Click on Login button in Welcome screen
+12/06/2018 15:45:05 devpinoyLogger Click on Login button in Welcome screen
+12/06/2018 15:45:07 devpinoyLogger Waiting for element Located by Locator map: 
 - native content: "By.chained({By.xpath: //android.widget.EditText[@index='1']})" 
 - html content: "by id or name "email""
-12/06/2018 14:59:30 devpinoyLogger email value is NEW2123@glooko.com
-12/06/2018 14:59:36 devpinoyLogger Password value is glooko1@23
-12/06/2018 14:59:42 devpinoyLogger Click on Login button
-12/06/2018 14:59:42 devpinoyLogger Swipe down notification bar
-12/06/2018 15:01:07 devpinoyLogger Clicking on Login button in Welcome screen
-12/06/2018 15:01:08 devpinoyLogger Waiting for element Located by Locator map: 
-- native content: "By.chained({By.xpath: //android.widget.EditText[@index='1']})" 
-- html content: "by id or name "email""
-12/06/2018 15:01:09 devpinoyLogger email value is NEW2123@glooko.com
-12/06/2018 15:01:15 devpinoyLogger Password value is glooko1@23
-12/06/2018 15:01:21 devpinoyLogger Click on Login button
-12/06/2018 15:01:22 devpinoyLogger Waiting for element Located by Locator map: 
+12/06/2018 15:45:07 devpinoyLogger email value is NEW2123@glooko.com
+12/06/2018 15:45:13 devpinoyLogger Password value is glooko1@23
+12/06/2018 15:45:19 devpinoyLogger Click on Login button
+12/06/2018 15:45:19 devpinoyLogger Waiting for element Located by Locator map: 
 - native content: "By.chained({By.id: history_button})" 
 - html content: "by id or name "HistoryTab""
-12/06/2018 15:01:50 devpinoyLogger Waiting for element Located by Locator map: 
+12/06/2018 15:45:51 devpinoyLogger Waiting for element Located by Locator map: 
 - native content: "By.chained({By.id: btnShowHideGraph})" 
 - html content: "by id or name "HideGraph""
