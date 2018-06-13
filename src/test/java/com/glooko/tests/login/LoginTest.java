@@ -11,26 +11,22 @@ import com.glooko.tests.basetest.BaseTest;
 import com.glooko.views.login.LoginView;
 import com.glooko.views.welcome.WelcomeView;
 
-public class LoginTest extends BaseTest{
-
+public class LoginTest extends BaseTest {
 	LoginView loginview;
 	WelcomeView welcomeview;
 
-
 	@BeforeMethod
-	public void init(){
-		loginview=new LoginView(driver);
-		welcomeview=new WelcomeView(driver);
+	public void init() {
+		loginview = new LoginView(driver);
+		welcomeview = new WelcomeView(driver);
 	}
 
-
 	@Test
-	public void doLogin(){
+	public void doLogin() {
 		try {
-
 			welcomeview.clickLogin();
-			ReadExcelData.getDataFromExcel("D://LoginFile.xlsx","Sheet1");
-			loginview.loginToGlooko(ReadExcelData.list.get(0),ReadExcelData.list.get(1));
+			ReadExcelData.getDataFromExcel("D://LoginFile.xlsx", "Sheet1");
+			loginview.loginToGlooko(ReadExcelData.list.get(0), ReadExcelData.list.get(1));
 		} catch (InvalidFormatException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -39,5 +35,4 @@ public class LoginTest extends BaseTest{
 			e.printStackTrace();
 		}
 	}
-
 }

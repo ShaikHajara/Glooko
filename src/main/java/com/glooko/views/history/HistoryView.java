@@ -7,7 +7,6 @@ import java.util.List;
 
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.Reporter;
 
 import com.glooko.views.BaseView;
 
@@ -18,7 +17,6 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
 public class HistoryView extends BaseView {
-
 	@AndroidFindBy(id = "history_button")
 	MobileElement HistoryTab;
 
@@ -67,17 +65,13 @@ public class HistoryView extends BaseView {
 	@AndroidFindBy(xpath = "//android.widget.ListView/android.widget.LinearLayout")
 	List<MobileElement> NoOfLists;
 
-	@AndroidFindBy(xpath = "//android.widget.ListView/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.TextView")
-
 	public static List<MobileElement> TextFromList;
-
 	public List<String> LoggedEventsText = new ArrayList<String>();
 	public static int noOfTextViews;
 
 	public HistoryView(AppiumDriver<MobileElement> driver) {
 		super(driver);
 		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
-
 	}
 
 	/**
@@ -95,27 +89,26 @@ public class HistoryView extends BaseView {
 	 * Method to hide graph in History tab
 	 */
 	public void hideGraph() {
-
 		int HideGraph_X = HideGraph.getLocation().getX();
 		int HideGraph_Y = HideGraph.getLocation().getY();
 		waitForElement(HideGraph, 70);
 		TouchAction action = new TouchAction(driver);
-		Reporter.log("X coordinate of Hidegraph element is" +" " +HideGraph_X, true);
-		Reporter.log("Y coordinate of Hidegraph element is" +" " +HideGraph_Y, true);
+		log.info("X coordinate of Hidegraph element is"+ HideGraph_X);
+		log.info("Y coordinate of Hidegraph element is"+ HideGraph_Y);
 		action.tap(HideGraph, HideGraph_X, HideGraph_Y).release().perform();
-		Reporter.log("Clicked on graph", true);
+		log.info("Clicked on graph");
 	}
 
 	public int findNoOfEventsLogged() {
 		int NoOfEvents = NoOfLists.size();
 		System.out.println(NoOfEvents);
-		Reporter.log("No of events logged" + NoOfEvents, true);
+		log.info("No of events logged" + NoOfEvents);
 		return NoOfEvents;
 	}
 
 	public static int findNoOfTextViews() {
 		noOfTextViews = TextFromList.size();
-		Reporter.log("Total no of text views are" + " " + noOfTextViews, true);
+		log.info("Total no of text views are"+ noOfTextViews);
 		return noOfTextViews;
 	}
 
@@ -124,13 +117,11 @@ public class HistoryView extends BaseView {
 	 */
 
 	public void findAllLoggedEventsText() {
-
 		findNoOfTextViews();
 		for (int i = 0; i < noOfTextViews; i++) {
 			System.out.println(TextFromList.get(i).getText());
 			LoggedEventsText.add(TextFromList.get(i).getText());
 		}
-
 	}
 
 	/**
@@ -141,7 +132,6 @@ public class HistoryView extends BaseView {
 		findAllLoggedEventsText();
 		int startElement_X = TextFromList.get(noOfTextViews - 1).getLocation().getX();
 		int startElement_Y = TextFromList.get(noOfTextViews - 1).getLocation().getY();
-
 		TouchAction action = new TouchAction(driver);
 		action.longPress(startElement_X, startElement_Y).waitAction(Duration.ofSeconds(20)).moveTo(DateTime).release()
 				.perform();
