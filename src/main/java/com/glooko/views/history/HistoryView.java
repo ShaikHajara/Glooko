@@ -7,7 +7,6 @@ import java.util.List;
 
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.Reporter;
 
 import com.glooko.views.BaseView;
 
@@ -94,22 +93,22 @@ public class HistoryView extends BaseView {
 		int HideGraph_Y = HideGraph.getLocation().getY();
 		waitForElement(HideGraph, 70);
 		TouchAction action = new TouchAction(driver);
-		Reporter.log("X coordinate of Hidegraph element is"+ HideGraph_X, true);
-		Reporter.log("Y coordinate of Hidegraph element is"+ HideGraph_Y, true);
+		log.info("X coordinate of Hidegraph element is"+ HideGraph_X);
+		log.info("Y coordinate of Hidegraph element is"+ HideGraph_Y);
 		action.tap(HideGraph, HideGraph_X, HideGraph_Y).release().perform();
-		Reporter.log("Clicked on graph", true);
+		log.info("Clicked on graph");
 	}
 
 	public int findNoOfEventsLogged() {
 		int NoOfEvents = NoOfLists.size();
 		System.out.println(NoOfEvents);
-		Reporter.log("No of events logged" + NoOfEvents, true);
+		log.info("No of events logged" + NoOfEvents);
 		return NoOfEvents;
 	}
 
 	public static int findNoOfTextViews() {
 		noOfTextViews = TextFromList.size();
-		Reporter.log("Total no of text views are"+ noOfTextViews, true);
+		log.info("Total no of text views are"+ noOfTextViews);
 		return noOfTextViews;
 	}
 
