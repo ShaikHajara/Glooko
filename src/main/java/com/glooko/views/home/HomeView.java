@@ -10,50 +10,46 @@ import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
-public class HomeView extends BaseView{
+public class HomeView extends BaseView {
+	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Patterns']")
+	MobileElement startElement;
 
-	   @AndroidFindBy(xpath="//android.widget.TextView[@text='Patterns']")
-	   MobileElement startElement;
+	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Today']")
+	MobileElement endElement;
 
-	   @AndroidFindBy(xpath="//android.widget.TextView[@text='Today']")
-	   MobileElement endElement;
+	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Glooko Reminder']")
+	MobileElement reminderNotification;
 
-	   @AndroidFindBy(xpath="//android.widget.TextView[@text='Glooko Reminder']")
-	   MobileElement reminderNotification;
+	public HomeView(AppiumDriver<MobileElement> driver) {
+		super(driver);
+		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
+	}
 
+	/**
+	 * Method to scrollDown in Home screen from one element to other element
+	 */
 
-	   public HomeView(AppiumDriver<MobileElement> driver){
-		   super(driver);
-		   PageFactory.initElements(new AppiumFieldDecorator(driver), this);
-	   }
+	public void scrollDown() {
+		waitForElement(endElement, 100);
+		log.info("Scroll down in Home screen");
+		scrollUsingElements(startElement, endElement);
+	}
 
-	     /**
-	     * Method to scrollDown in Home screen from one element to other element
-	    */
+	/**
+	 * Method to check Reminder notification in notification tray
+	 */
 
-		public void scrollDown(){
-			waitForElement(endElement, 100);
-			log.info("Scroll down in Home screen");
-			scrollUpOrDownUsingElements(startElement,endElement);
-
-		}
-
-		/**
-		 *  Method to check Reminder notification in notification tray
-		 */
-
-		public void checkNotification(){
-			swipeNotificationBar();
-    		try{
-			if(reminderNotification.isDisplayed()){
-				Reporter.log("Reminder notification available in notification tray",true);
+	public void checkNotification() {
+		waitForElement(startElement,80);
+		swipeTopToBottom(60);
+		try {
+			if (reminderNotification.isDisplayed()) {
+				Reporter.log("Reminder notification available in notification tray", true);
 				reminderNotification.click();
-	               	}
-			   }
-			 catch(Exception e){
-				Reporter.log("Reminder notification doesn't exists in notification tray",true);
 			}
-
+		} catch (Exception e) {
+			Reporter.log("Reminder notification doesn't exists in notification tray", true);
 		}
-
+		driver.navigate().back();
+	}
 }

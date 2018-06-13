@@ -12,25 +12,23 @@ import com.glooko.views.history.HistoryView;
 import com.glooko.views.login.LoginView;
 import com.glooko.views.welcome.WelcomeView;
 
-public class HistoryTest extends BaseTest{
+public class HistoryTest extends BaseTest {
 
 	HistoryView historyview;
 	LoginView loginview;
 	WelcomeView welcomeview;
 
 	@BeforeMethod
-	public void init(){
-		loginview=new LoginView(driver);
-		welcomeview=new WelcomeView(driver);
-		historyview=new HistoryView(driver);
-       }
-
+	public void init() {
+		loginview = new LoginView(driver);
+		welcomeview = new WelcomeView(driver);
+		historyview = new HistoryView(driver);
+	}
 
 	@Test
-	public void clickHistory()
-	{
+	public void clickHistory() {
 		welcomeview.clickLogin();
-		loginview.loginToGlooko(ReadExcelData.list.get(0),ReadExcelData.list.get(1));
+		loginview.loginToGlooko(ReadExcelData.list.get(0), ReadExcelData.list.get(1));
 		try {
 			historyview.clickHistoryTab();
 		} catch (InvalidFormatException e) {
@@ -43,6 +41,4 @@ public class HistoryTest extends BaseTest{
 		historyview.hideGraph();
 		historyview.findAllLoggedEventsText();
 	}
-
 }
-

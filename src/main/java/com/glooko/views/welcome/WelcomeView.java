@@ -10,20 +10,19 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
 public class WelcomeView extends BaseView {
-
 	@AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'Sync')]")
 	MobileElement welcomeScreenTitleFirstPage;
 
 	@AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'Easily')]")
 	MobileElement welcomeScreenCopyFirstPage;
 
-	@AndroidFindBy(xpath ="//android.widget.TextView[contains(@text,'Activation')]")
+	@AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'Activation')]")
 	MobileElement welcomeScreenActivationCodeLink;
 
-	@AndroidFindBy(xpath ="//android.widget.TextView[contains(@text,'SIGN UP')]")
+	@AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'SIGN UP')]")
 	MobileElement signUp;
 
-	@AndroidFindBy(xpath ="//android.widget.TextView[contains(@text,'LOGIN')]")
+	@AndroidFindBy(xpath = "//android.widget.TextView[contains(@text,'LOGIN')]")
 	MobileElement login;
 
 	public WelcomeView(AppiumDriver<MobileElement> driver) {
@@ -34,11 +33,8 @@ public class WelcomeView extends BaseView {
 	/**
 	 * Method to click on login button in Welcome screen
 	 */
-
-	public void clickLogin(){
+	public void clickLogin() {
 		log.info("Click on Login button in Welcome screen");
 		login.click();
 	}
-
-
 }
