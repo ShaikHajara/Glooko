@@ -26,21 +26,11 @@ public class HomeView extends BaseView {
 	}
 
 	/**
-	 * Method to scrollDown in Home screen from one element to other element
-	 */
-
-	public void scrollDown() {
-		waitForElement(endElement, 100);
-		log.info("Scroll down in Home screen");
-		scrollUsingElements(startElement, endElement);
-	}
-
-	/**
 	 * Method to check Reminder notification in notification tray
 	 */
 
 	public void checkNotification() {
-		waitForElement(startElement,80);
+		waitForElement(startElement, 80);
 		swipeTopToBottom(60);
 		try {
 			if (reminderNotification.isDisplayed()) {
@@ -51,5 +41,15 @@ public class HomeView extends BaseView {
 			Reporter.log("Reminder notification doesn't exists in notification tray", true);
 		}
 		driver.navigate().back();
+	}
+
+	/**
+	 * Method to scrollDown in Home screen from one element to other element
+	 */
+
+	public void scrollDown() {
+		waitForElement(endElement, 100);
+		log.info("Scroll down in Home screen");
+		scrollUsingElements(startElement, endElement);
 	}
 }

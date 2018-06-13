@@ -21,15 +21,26 @@ import io.appium.java_client.service.local.AppiumServiceBuilder;
 
 public class BaseTest {
 
-	public AppiumDriver<MobileElement> driver;
 	public static DesiredCapabilities cap;
+	public static String service_url;
+	public AppiumDriver<MobileElement> driver;
 	public String Url = "http://127.0.0.1:4723/wd/hub";
 	private CommandLine cmd;
 	private DefaultExecuteResultHandler resulthandler;
 	private DefaultExecutor executor;
 	public AppiumServiceBuilder builder;
 	public AppiumDriverLocalService service;
-	public static String service_url;
+
+	public String appiumServerStart() throws InterruptedException {
+		service = AppiumDriverLocalService.buildService(new AppiumServiceBuilder()
+				.withAppiumJS(new File(
+						"C:\\Users\\Shaik.Hajara\\AppData\\Roaming\\npm\\node_modules\\appium\\build\\lib\\main.js"))
+				.withIPAddress("127.0.0.1").usingPort(4723));
+		service.start();
+		Thread.sleep(5000);
+		service_url = service.getUrl().toString();
+		return service_url;
+	}
 
 	@BeforeClass
 	public void setup() {
@@ -74,16 +85,5 @@ public class BaseTest {
 		 * } catch (Exception e) { e.printStackTrace(); }
 		 */
 		service.stop();
-	}
-
-	public String appiumServerStart() throws InterruptedException {
-		service = AppiumDriverLocalService.buildService(new AppiumServiceBuilder()
-				.withAppiumJS(new File(
-						"C:\\Users\\Shaik.Hajara\\AppData\\Roaming\\npm\\node_modules\\appium\\build\\lib\\main.js"))
-				.withIPAddress("127.0.0.1").usingPort(4723));
-		service.start();
-		Thread.sleep(5000);
-		service_url = service.getUrl().toString();
-		return service_url;
 	}
 }
