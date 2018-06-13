@@ -17,13 +17,6 @@ public class HomeTest extends BaseTest {
 	WelcomeView welcomeview;
 	HomeView homeview;
 
-	@BeforeMethod
-	public void init() {
-		loginview = new LoginView(driver);
-		welcomeview = new WelcomeView(driver);
-		homeview = new HomeView(driver);
-	}
-
 	@Test
 	public void checkAndtapNotification() {
 		welcomeview.clickLogin();
@@ -38,5 +31,12 @@ public class HomeTest extends BaseTest {
 		}
 		loginview.loginToGlooko(ReadExcelData.list.get(0), ReadExcelData.list.get(1));
 		homeview.checkNotification();
+	}
+
+	@BeforeMethod
+	public void init() {
+		loginview = new LoginView(driver);
+		welcomeview = new WelcomeView(driver);
+		homeview = new HomeView(driver);
 	}
 }

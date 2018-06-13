@@ -15,12 +15,6 @@ public class LoginTest extends BaseTest {
 	LoginView loginview;
 	WelcomeView welcomeview;
 
-	@BeforeMethod
-	public void init() {
-		loginview = new LoginView(driver);
-		welcomeview = new WelcomeView(driver);
-	}
-
 	@Test
 	public void doLogin() {
 		try {
@@ -34,5 +28,11 @@ public class LoginTest extends BaseTest {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+
+	@BeforeMethod
+	public void init() {
+		loginview = new LoginView(driver);
+		welcomeview = new WelcomeView(driver);
 	}
 }

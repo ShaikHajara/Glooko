@@ -17,6 +17,16 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
 public class HistoryView extends BaseView {
+	public static List<MobileElement> TextFromList;
+
+	public static int noOfTextViews;
+
+	public static int findNoOfTextViews() {
+		noOfTextViews = TextFromList.size();
+		log.info("Total no of text views are" + noOfTextViews);
+		return noOfTextViews;
+	}
+
 	@AndroidFindBy(id = "history_button")
 	MobileElement HistoryTab;
 
@@ -65,9 +75,7 @@ public class HistoryView extends BaseView {
 	@AndroidFindBy(xpath = "//android.widget.ListView/android.widget.LinearLayout")
 	List<MobileElement> NoOfLists;
 
-	public static List<MobileElement> TextFromList;
 	public List<String> LoggedEventsText = new ArrayList<String>();
-	public static int noOfTextViews;
 
 	public HistoryView(AppiumDriver<MobileElement> driver) {
 		super(driver);
@@ -86,33 +94,6 @@ public class HistoryView extends BaseView {
 	}
 
 	/**
-	 * Method to hide graph in History tab
-	 */
-	public void hideGraph() {
-		int HideGraph_X = HideGraph.getLocation().getX();
-		int HideGraph_Y = HideGraph.getLocation().getY();
-		waitForElement(HideGraph, 70);
-		TouchAction action = new TouchAction(driver);
-		log.info("X coordinate of Hidegraph element is"+ HideGraph_X);
-		log.info("Y coordinate of Hidegraph element is"+ HideGraph_Y);
-		action.tap(HideGraph, HideGraph_X, HideGraph_Y).release().perform();
-		log.info("Clicked on graph");
-	}
-
-	public int findNoOfEventsLogged() {
-		int NoOfEvents = NoOfLists.size();
-		System.out.println(NoOfEvents);
-		log.info("No of events logged" + NoOfEvents);
-		return NoOfEvents;
-	}
-
-	public static int findNoOfTextViews() {
-		noOfTextViews = TextFromList.size();
-		log.info("Total no of text views are"+ noOfTextViews);
-		return noOfTextViews;
-	}
-
-	/**
 	 * Method to find text of all events without scrolling up
 	 */
 
@@ -122,6 +103,27 @@ public class HistoryView extends BaseView {
 			System.out.println(TextFromList.get(i).getText());
 			LoggedEventsText.add(TextFromList.get(i).getText());
 		}
+	}
+
+	public int findNoOfEventsLogged() {
+		int NoOfEvents = NoOfLists.size();
+		System.out.println(NoOfEvents);
+		log.info("No of events logged" + NoOfEvents);
+		return NoOfEvents;
+	}
+
+	/**
+	 * Method to hide graph in History tab
+	 */
+	public void hideGraph() {
+		int HideGraph_X = HideGraph.getLocation().getX();
+		int HideGraph_Y = HideGraph.getLocation().getY();
+		waitForElement(HideGraph, 70);
+		TouchAction action = new TouchAction(driver);
+		log.info("X coordinate of Hidegraph element is" + HideGraph_X);
+		log.info("Y coordinate of Hidegraph element is" + HideGraph_Y);
+		action.tap(HideGraph, HideGraph_X, HideGraph_Y).release().perform();
+		log.info("Clicked on graph");
 	}
 
 	/**

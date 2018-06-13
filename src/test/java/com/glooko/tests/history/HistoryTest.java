@@ -18,13 +18,6 @@ public class HistoryTest extends BaseTest {
 	LoginView loginview;
 	WelcomeView welcomeview;
 
-	@BeforeMethod
-	public void init() {
-		loginview = new LoginView(driver);
-		welcomeview = new WelcomeView(driver);
-		historyview = new HistoryView(driver);
-	}
-
 	@Test
 	public void clickHistory() {
 		welcomeview.clickLogin();
@@ -40,5 +33,12 @@ public class HistoryTest extends BaseTest {
 		}
 		historyview.hideGraph();
 		historyview.findAllLoggedEventsText();
+	}
+
+	@BeforeMethod
+	public void init() {
+		loginview = new LoginView(driver);
+		welcomeview = new WelcomeView(driver);
+		historyview = new HistoryView(driver);
 	}
 }
