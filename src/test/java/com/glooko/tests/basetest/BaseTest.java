@@ -53,7 +53,7 @@ public class BaseTest {
 			cap.setCapability("appActivity", "com.glooko.glooko.activity.GlookoLaunchActivity");
 			cap.setCapability("app-wait-activity", "com.glooko.glooko.activity.GlookoLaunchActivity");
 			// cap.setCapability(MobileCapabilityType.NO_RESET, true);
-			String services_url = appiumServerStart();
+			final String services_url = appiumServerStart();
 			System.out.println(services_url);
 			/*
 			 * Runtime runtime = Runtime.getRuntime(); runtime.exec(
@@ -63,12 +63,12 @@ public class BaseTest {
 			Thread.sleep(30000);
 			driver = new AndroidDriver<MobileElement>(new URL(services_url), cap);
 			System.out.println("Launched app");
-		} catch (MalformedURLException e) {
+		} catch (final MalformedURLException e) {
 			e.printStackTrace();
-		} catch (IOException e) {
+		} catch (final IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		} catch (InterruptedException e) {
+		} catch (final InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
