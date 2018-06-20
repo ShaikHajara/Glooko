@@ -37,7 +37,7 @@ public class HomeView extends BaseView {
 				Reporter.log("Reminder notification available in notification tray", true);
 				reminderNotification.click();
 			}
-		} catch (Exception e) {
+		} catch (final Exception e) {
 			Reporter.log("Reminder notification doesn't exists in notification tray", true);
 		}
 		driver.navigate().back();

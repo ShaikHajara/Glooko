@@ -28,52 +28,52 @@ public class HistoryView extends BaseView {
 	}
 
 	@AndroidFindBy(id = "history_button")
-	MobileElement HistoryTab;
+	MobileElement historyTab;
 
 	@AndroidFindBy(xpath = "//android.widget.ListView[@index='4']")
-	MobileElement EventsList;
+	MobileElement eventsList;
 
 	@AndroidFindBy(id = "btnShowHideGraph")
-	MobileElement HideGraph;
+	MobileElement hideGraph;
 
 	@AndroidFindBy(id = "history_food_text")
-	List<MobileElement> FoodText;
+	List<MobileElement> foodText;
 
 	@AndroidFindBy(id = "carbs_string")
-	MobileElement CarbsText;
+	MobileElement carbsText;
 
 	@AndroidFindBy(id = "history_food_carbs")
-	MobileElement CarbsValue;
+	MobileElement carbsValue;
 
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Insulin']")
-	List<MobileElement> Insulin;
+	List<MobileElement> insulin;
 
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Insulin']/android.widget.TextView")
-	MobileElement InsulinValue;
+	MobileElement insulinValue;
 
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Medication']")
-	MobileElement Medication;
+	MobileElement medication;
 
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Medication']/android.widget.TextView")
-	MobileElement MedicationValue;
+	MobileElement medicationValue;
 
 	@AndroidFindBy(id = "history_exercise_text")
-	MobileElement Exercise;
+	MobileElement exercise;
 
 	@AndroidFindBy(id = "history_exercise_details")
-	MobileElement ExerciseDetails;
+	MobileElement exerciseDetails;
 
 	@AndroidFindBy(id = "lblDateTime")
-	MobileElement DateTime;
+	MobileElement dateTime;
 
 	@AndroidFindBy(id = "no_data_title")
-	MobileElement NoDataInHistory;
+	MobileElement noDataInHistory;
 
 	@AndroidFindBy(id = "linShowHideGraph")
-	MobileElement ShowGraphLine;
+	MobileElement showGraphLine;
 
 	@AndroidFindBy(xpath = "//android.widget.ListView/android.widget.LinearLayout")
-	List<MobileElement> NoOfLists;
+	List<MobileElement> noOfLists;
 
 	public List<String> LoggedEventsText = new ArrayList<String>();
 
@@ -89,8 +89,8 @@ public class HistoryView extends BaseView {
 	 * @throws IOException
 	 */
 	public void clickHistoryTab() throws InvalidFormatException, IOException {
-		waitForElement(HistoryTab, 100);
-		HistoryTab.click();
+		waitForElement(historyTab, 100);
+		historyTab.click();
 	}
 
 	/**
@@ -106,7 +106,7 @@ public class HistoryView extends BaseView {
 	}
 
 	public int findNoOfEventsLogged() {
-		int NoOfEvents = NoOfLists.size();
+		final int NoOfEvents = noOfLists.size();
 		System.out.println(NoOfEvents);
 		log.info("No of events logged" + NoOfEvents);
 		return NoOfEvents;
@@ -116,13 +116,14 @@ public class HistoryView extends BaseView {
 	 * Method to hide graph in History tab
 	 */
 	public void hideGraph() {
-		int HideGraph_X = HideGraph.getLocation().getX();
-		int HideGraph_Y = HideGraph.getLocation().getY();
-		waitForElement(HideGraph, 70);
-		TouchAction action = new TouchAction(driver);
+		waitForElement(hideGraph, 60);
+		final int HideGraph_X = hideGraph.getLocation().getX();
+		final int HideGraph_Y = hideGraph.getLocation().getY();
+		waitForElement(hideGraph, 50);
+		final TouchAction action = new TouchAction(driver);
 		log.info("X coordinate of Hidegraph element is" + HideGraph_X);
 		log.info("Y coordinate of Hidegraph element is" + HideGraph_Y);
-		action.tap(HideGraph, HideGraph_X, HideGraph_Y).release().perform();
+		action.press(hideGraph, HideGraph_X, HideGraph_Y).release().perform();
 		log.info("Clicked on graph");
 	}
 
@@ -132,10 +133,10 @@ public class HistoryView extends BaseView {
 
 	public void scrollAndGetLoggedEventsText() {
 		findAllLoggedEventsText();
-		int startElement_X = TextFromList.get(noOfTextViews - 1).getLocation().getX();
-		int startElement_Y = TextFromList.get(noOfTextViews - 1).getLocation().getY();
-		TouchAction action = new TouchAction(driver);
-		action.longPress(startElement_X, startElement_Y).waitAction(Duration.ofSeconds(20)).moveTo(DateTime).release()
+		final int startElement_X = TextFromList.get(noOfTextViews - 1).getLocation().getX();
+		final int startElement_Y = TextFromList.get(noOfTextViews - 1).getLocation().getY();
+		final TouchAction action = new TouchAction(driver);
+		action.longPress(startElement_X, startElement_Y).waitAction(Duration.ofSeconds(20)).moveTo(dateTime).release()
 				.perform();
 		new HistoryView(driver).scrollAndGetLoggedEventsText();
 	}

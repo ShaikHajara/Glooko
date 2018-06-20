@@ -1,4 +1,4 @@
-package com.glooko.excelclassutility;
+package com.glooko.utility;
 
 import java.io.File;
 import java.io.FileInputStream;
