@@ -33,6 +33,19 @@ public class HomeTest extends BaseTest {
 		homeview.checkNotification();
 	}
 
+	@Test
+	public void getInsulinListText() {
+		try {
+			Thread.sleep(1000);
+		} catch (final InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		homeview.clickFloatIconFromHomeScreen();
+		homeview.tapInsulinDropDown();
+		homeview.getInsulinList();
+	}
+
 	@BeforeMethod
 	public void init() {
 		loginview = new LoginView(driver);
