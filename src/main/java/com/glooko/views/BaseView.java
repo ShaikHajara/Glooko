@@ -24,6 +24,16 @@ public class BaseView {
 				"C:\\Users\\Shaik.Hajara\\workspace\\glookoapp\\src\\main\\resources\\logs\\log4j.properties");
 	}
 
+	public int findXCoordinate(MobileElement ele) {
+		final int X = ele.getLocation().getX();
+		return X;
+	}
+
+	public int findYCoordinate(MobileElement ele) {
+		final int Y = ele.getLocation().getY();
+		return Y;
+	}
+
 	public void scrollUsingCoordinates(int startX, int startY, int endX, int endY, int duration) {
 		final TouchAction action = new TouchAction(driver);
 		action.longPress(startX, startY).waitAction(Duration.ofSeconds(duration)).moveTo(endX, endY).release()
@@ -33,6 +43,16 @@ public class BaseView {
 	public void scrollUsingElements(MobileElement startElement, MobileElement endElement) {
 		final TouchAction action = new TouchAction(driver);
 		action.press(startElement).waitAction(Duration.ofSeconds(10)).moveTo(endElement).release().perform();
+	}
+
+	public int secondXCoordinate(MobileElement ele) {
+		final int secondX = ele.getLocation().getX() + ele.getSize().getWidth();
+		return secondX;
+	}
+
+	public int secondYCoordinate(MobileElement ele) {
+		final int secondY = ele.getLocation().getY() + ele.getSize().getHeight();
+		return secondY;
 	}
 
 	public void swipeNotificationBar() {

@@ -40,8 +40,12 @@ public class HistoryTest extends BaseTest {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		// historyview.findAllLoggedEventsText();
+	}
+
+	// @Test
+	public void hideGraphInHistoryView() {
 		historyview.hideGraph();
-		historyview.findAllLoggedEventsText();
 	}
 
 	@BeforeMethod

@@ -75,6 +75,15 @@ public class HistoryView extends BaseView {
 	@AndroidFindBy(xpath = "//android.widget.ListView/android.widget.LinearLayout")
 	List<MobileElement> noOfLists;
 
+	@AndroidFindBy(id = "fullscreen_icon")
+	MobileElement fullscreenIcon;
+
+	@AndroidFindBy(id = "note_insulin_type")
+	MobileElement addInsulin;
+
+	@AndroidFindBy(xpath = "//android.widget.ListView/android.widget.LinearLayout/android.widget.TextView[0]")
+	MobileElement allInjectionNames;
+
 	public List<String> LoggedEventsText = new ArrayList<String>();
 
 	public HistoryView(AppiumDriver<MobileElement> driver) {
@@ -116,15 +125,10 @@ public class HistoryView extends BaseView {
 	 * Method to hide graph in History tab
 	 */
 	public void hideGraph() {
-		waitForElement(hideGraph, 60);
-		final int HideGraph_X = hideGraph.getLocation().getX();
-		final int HideGraph_Y = hideGraph.getLocation().getY();
-		waitForElement(hideGraph, 50);
+		waitForElement(fullscreenIcon, 60);
 		final TouchAction action = new TouchAction(driver);
-		log.info("X coordinate of Hidegraph element is" + HideGraph_X);
-		log.info("Y coordinate of Hidegraph element is" + HideGraph_Y);
-		action.press(hideGraph, HideGraph_X, HideGraph_Y).release().perform();
-		log.info("Clicked on graph");
+		action.tap(hideGraph.getCenter().getX(), hideGraph.getCenter().getY()).waitAction(Duration.ofSeconds(40))
+				.release().perform();
 	}
 
 	/**
