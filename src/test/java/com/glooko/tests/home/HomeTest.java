@@ -35,15 +35,12 @@ public class HomeTest extends BaseTest {
 
 	@Test
 	public void getInsulinListText() {
-		try {
-			Thread.sleep(1000);
-		} catch (final InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		waitForPageToLoadUsingThread(1000);
 		homeview.clickFloatIconFromHomeScreen();
+		assertEquals(homeview.titleInAddEventScreen, "Add Event");
 		homeview.tapInsulinDropDown();
-		homeview.getInsulinList();
+		assertEquals(homeview.startElementInMedicationList, "Insulin");
+		homeview.getMedicationList();
 	}
 
 	@BeforeMethod

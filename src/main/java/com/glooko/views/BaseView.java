@@ -143,19 +143,4 @@ public class BaseView {
 		final WebDriverWait wait = new WebDriverWait(driver, timeOutInSeconds);
 		wait.until(ExpectedConditions.visibilityOf(ele));
 	}
-
-	/**
-	 * Method to wait for page to load using thread sleep
-	 * 
-	 * @param timeOutInMilliSeconds
-	 */
-	public void waitForPageToLoadUsingThread(int timeOutInMilliSeconds) {
-
-		try {
-			Thread.sleep(timeOutInMilliSeconds);
-		} catch (final InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
 }

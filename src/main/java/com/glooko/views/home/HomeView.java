@@ -28,11 +28,47 @@ public class HomeView extends BaseView {
 	@AndroidFindBy(xpath = "//android.widget.ImageButton[@clickable='true']")
 	MobileElement floatIcon;
 
+	@AndroidFindBy(id = "save_note_action")
+	MobileElement addButton;
+
 	@AndroidFindBy(id = "note_insulin_type")
 	MobileElement addInsulin;
 
+	@AndroidFindBy(id = "note_food_field")
+	MobileElement addFood;
+
+	@AndroidFindBy(id = "note_carbs_field")
+	MobileElement foodQuantityInCarbs;
+
+	@AndroidFindBy(id = "note_insulin_field")
+	MobileElement insulinQuantityInUnits;
+
+	@AndroidFindBy(id = "note_medication_field")
+	MobileElement medicationQuantityInMg;
+
+	@AndroidFindBy(id = "note_exercise_field")
+	MobileElement exerciseInMins;
+
+	@AndroidFindBy(id = "note_medication_type")
+	MobileElement addMedication;
+
+	@AndroidFindBy(id = "note_exercise_name")
+	MobileElement addExercise;
+
+	@AndroidFindBy(id = "note_date_text")
+	MobileElement dateCalendar;
+
+	@AndroidFindBy(id = "note_time_text")
+	MobileElement time;
+
+	@AndroidFindBy(id = "note_comment_text")
+	MobileElement addComment;
+
 	@AndroidFindBy(id = "alertTitle")
-	MobileElement startElementInMedicationList;
+	public MobileElement startElementInMedicationList;
+
+	@AndroidFindBy(xpath = "//android.widget.LinearLayout/android.view.ViewGroup/android.widget.TextView")
+	public MobileElement titleInAddEventScreen;
 
 	@AndroidFindBy(xpath = "//android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout/android.widget.TextView[0]")
 	MobileElement allInjectionNames;
@@ -48,6 +84,24 @@ public class HomeView extends BaseView {
 	public HomeView(AppiumDriver<MobileElement> driver) {
 		super(driver);
 		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
+	}
+
+	/**
+	 * Method to Add Food,Insulin,Medication,Exercise events
+	 */
+
+	public void addMultipleEvents() {
+
+		addFood.sendKeys("Chicken");
+		foodQuantityInCarbs.sendKeys("100");
+		addInsulin.click();
+
+		addMedication.click();
+
+		addExercise.sendKeys("Walk");
+		exerciseInMins.sendKeys("30");
+		addButton.click();
+
 	}
 
 	/**
@@ -85,7 +139,7 @@ public class HomeView extends BaseView {
 	/**
 	 * Method to get list of medications from Insulin dropdown field
 	 */
-	public void getInsulinList() {
+	public void getMedicationList() {
 		for (int i = 0; i < medicationNames.size(); i++) {
 			list.add(medicationNames.get(i).getText());
 			log.info(medicationNames.get(i).getText());
@@ -96,7 +150,7 @@ public class HomeView extends BaseView {
 		log.info(lastElementWithoutPrefix);
 		if (!lastElementWithoutPrefix.equalsIgnoreCase("Afrezza")) {
 			scrollUsingElements(medicationNames.get(12), startElementInMedicationList);
-			new HomeView(driver).getInsulinList();
+			new HomeView(driver).getMedicationList();
 		} else {
 			log.info("Cannot scroll further");
 		}
