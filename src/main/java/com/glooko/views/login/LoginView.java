@@ -26,12 +26,12 @@ public class LoginView extends BaseView {
 	}
 
 	/**
-	 * Method to login into app
+	 * Method to login into app.
 	 *
 	 * @param username-Getting
-	 *            data from excel
+	 *            data from excel.
 	 * @param password-Getting
-	 *            data from excel
+	 *            data from excel.
 	 */
 	public void loginToGlooko(String Username, String Password) {
 		waitForElement(email, 60);

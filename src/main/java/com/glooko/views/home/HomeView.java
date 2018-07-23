@@ -87,9 +87,8 @@ public class HomeView extends BaseView {
 	}
 
 	/**
-	 * Method to Add Food,Insulin,Medication,Exercise events
+	 * Method to Add Food,Insulin,Medication,Exercise events.
 	 */
-
 	public void addMultipleEvents() {
 
 		addFood.sendKeys("Chicken");
@@ -105,9 +104,8 @@ public class HomeView extends BaseView {
 	}
 
 	/**
-	 * Method to check Reminder notification in notification tray
+	 * Method to check Reminder notification in notification tray.
 	 */
-
 	public void checkNotification() {
 		waitForElement(startElement, 80);
 		swipeTopToBottom(50);
@@ -123,21 +121,16 @@ public class HomeView extends BaseView {
 	}
 
 	/**
-	 * Method to click on Float icon from Home screen
+	 * Method to click on Float icon from Home screen.
 	 */
-
 	public void clickFloatIconFromHomeScreen() {
 		log.info("Tapping on Plus icon");
-		// waitForElement(startElement, 80);
 		final TouchAction action = new TouchAction(driver);
-		// action.longPress(findXCoordinate(floatIcon),
-		// findYCoordinate(floatIcon)).waitAction(Duration.ofMinutes(1))
-		// .release().perform();
 		action.tap(1188, 1951).release().perform();
 	}
 
 	/**
-	 * Method to get list of medications from Insulin dropdown field
+	 * Method to get list of medications from Insulin dropdown field.
 	 */
 	public void getMedicationList() {
 		for (int i = 0; i < medicationNames.size(); i++) {
@@ -157,9 +150,8 @@ public class HomeView extends BaseView {
 	}
 
 	/**
-	 * Method to scrollDown in Home screen from one element to other element
+	 * Method to scrollDown in Home screen from one element to other element.
 	 */
-
 	public void scrollDown() {
 		waitForElement(endElement, 100);
 		log.info("Scroll down in Home screen");
@@ -167,7 +159,7 @@ public class HomeView extends BaseView {
 	}
 
 	/**
-	 * Method to tap on Insulin dropdwon in Add event screen
+	 * Method to tap on Insulin dropdown in Add event screen.
 	 */
 	public void tapInsulinDropDown() {
 		addInsulin.click();

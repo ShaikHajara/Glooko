@@ -44,10 +44,13 @@ public class BaseTest {
 	}
 
 	/**
-	 * Method to assert two strings
+	 * Method to assert two strings.Used to verify two strings whether it is
+	 * equal or not.
 	 *
 	 * @param ele
-	 * @param Expected
+	 *            - This is first parameter of assertEquals.
+	 * @param Expected-
+	 *            This is second parameter used to pass expected string.
 	 */
 	public void assertEquals(MobileElement ele, String Expected) {
 		try {
@@ -96,9 +99,10 @@ public class BaseTest {
 	}
 
 	/**
-	 * Method to wait for page to load using thread sleep
+	 * Method to wait for page to load using thread sleep.
 	 *
-	 * @param timeOutInMilliSeconds
+	 * @param timeOutInMilliSeconds-
+	 *            This is timeout parameter used to wait for page to load.
 	 */
 	public void waitForSeconds(int timeOutInSeconds) {
 		try {

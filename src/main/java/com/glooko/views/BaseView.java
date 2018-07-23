@@ -25,10 +25,11 @@ public class BaseView {
 	}
 
 	/**
-	 * Method to get 'X' coordinate of Element
+	 * Method to get 'X' Coordinate of Element.
 	 *
-	 * @param ele
-	 * @return
+	 * @param ele-
+	 *            Used to get X Coordinate of element.
+	 * @return- X Coordinate.
 	 */
 	public int findXCoordinate(MobileElement ele) {
 		final int X = ele.getLocation().getX();
@@ -36,10 +37,11 @@ public class BaseView {
 	}
 
 	/**
-	 * Method to get Y Coordinate of Element
+	 * Method to get Y Coordinate of Element.
 	 *
-	 * @param ele
-	 * @return
+	 * @param ele-
+	 *            Used to get Y-Coordinate of element.
+	 * @return -Y Coordinate.
 	 */
 	public int findYCoordinate(MobileElement ele) {
 		final int Y = ele.getLocation().getY();
@@ -47,13 +49,18 @@ public class BaseView {
 	}
 
 	/**
-	 * Method to scroll using X,Y coordinates
+	 * Method to scroll using X,Y coordinates.
 	 *
 	 * @param startX
-	 * @param startY
-	 * @param endX
+	 *            - Used to find startX Coordinate of device.
+	 * @param startY-
+	 *            Used to find startY Coordinate of device.
+	 * @param endX-
+	 *            Used to find endX Coordinate of device.
 	 * @param endY
+	 *            -Used to find endY Coordinate of device.
 	 * @param duration
+	 *            -Waiting time to scroll from start to end position.
 	 */
 	public void scrollUsingCoordinates(int startX, int startY, int endX, int endY, int duration) {
 		final TouchAction action = new TouchAction(driver);
@@ -62,10 +69,12 @@ public class BaseView {
 	}
 
 	/**
-	 * Method to scroll from start element to end element
+	 * Method to scroll from start element to end element.
 	 *
-	 * @param startElement
-	 * @param endElement
+	 * @param startElement-This
+	 *            is first parameter in scrollUsingElements method.
+	 * @param endElement-This
+	 *            is second parameter in scrollUsingElements method.
 	 */
 	public void scrollUsingElements(MobileElement startElement, MobileElement endElement) {
 		final TouchAction action = new TouchAction(driver);
@@ -73,10 +82,11 @@ public class BaseView {
 	}
 
 	/**
-	 * Method to find endXCoordinate of Mobile Element
+	 * Method to find endXCoordinate of Mobile Element.
 	 *
 	 * @param ele
-	 * @return
+	 *            -used to find endX coordinate.
+	 * @return -endX coordinate.
 	 */
 	public int secondXCoordinate(MobileElement ele) {
 		final int secondX = ele.getLocation().getX() + ele.getSize().getWidth();
@@ -84,10 +94,11 @@ public class BaseView {
 	}
 
 	/**
-	 * Method to find endYCoordinate of Mobile Element
+	 * Method to find endY Coordinate of Mobile Element.
 	 *
-	 * @param ele
-	 * @return
+	 * @param ele-
+	 *            used to find endY Coordinate.
+	 * @return-end Y coordinate.
 	 */
 	public int secondYCoordinate(MobileElement ele) {
 		final int secondY = ele.getLocation().getY() + ele.getSize().getHeight();
@@ -95,7 +106,7 @@ public class BaseView {
 	}
 
 	/**
-	 * Method to swipe down Notification bar of Mobile device
+	 * Method to swipe down Notification bar of Mobile device.
 	 */
 	public void swipeNotificationBar() {
 		log.info("Swipe down notification bar");
@@ -104,9 +115,10 @@ public class BaseView {
 	}
 
 	/**
-	 * Method to swipe from Top to Bottom
+	 * Method to swipe from Top to Bottom.
 	 *
-	 * @param durationInSeconds
+	 * @param durationInSeconds-
+	 *            Time to move from start to end coordinates.
 	 */
 	public void swipeTopToBottom(int durationInSeconds) {
 		final TouchAction action = new TouchAction(driver);
@@ -122,10 +134,12 @@ public class BaseView {
 	}
 
 	/**
-	 * Method to wait for visibility of Mobile Element located by 'By'
+	 * Method to wait for visibility of Mobile Element located by 'By'.
 	 *
 	 * @param by
-	 * @param timeOutInSeconds
+	 *            -This is first parameter of waitForElement method.
+	 * @param timeOutInSeconds-
+	 *            This parameter is used to wait for mentioned time.
 	 */
 	public void waitForElement(By by, int timeOutInSeconds) {
 		final WebDriverWait wait = new WebDriverWait(driver, timeOutInSeconds);
@@ -133,10 +147,12 @@ public class BaseView {
 	}
 
 	/**
-	 * Method to wait for Visibility of Mobile element
+	 * Method to wait for Visibility of Mobile element.
 	 *
-	 * @param ele
-	 * @param timeOutInSeconds
+	 * @param ele-
+	 *            This is first paramater.Here we need to pass mobile element.
+	 * @param timeOutInSeconds-
+	 *            This parameter is used to wait for mentioned time.
 	 */
 	public void waitForElement(MobileElement ele, int timeOutInSeconds) {
 		log.info("Waiting for element" + " " + ele.toString());

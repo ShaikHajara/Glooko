@@ -92,7 +92,7 @@ public class HistoryView extends BaseView {
 	}
 
 	/**
-	 * Method to click on History tab from Home screen
+	 * Method to click on History tab from Home screen.
 	 *
 	 * @throws InvalidFormatException
 	 * @throws IOException
@@ -103,7 +103,7 @@ public class HistoryView extends BaseView {
 	}
 
 	/**
-	 * Method to find text of all events without scrolling up
+	 * Method to find text of all events without scrolling up.
 	 */
 
 	public void findAllLoggedEventsText() {
@@ -122,7 +122,7 @@ public class HistoryView extends BaseView {
 	}
 
 	/**
-	 * Method to hide graph in History tab
+	 * Method to hide graph in History tab.
 	 */
 	public void hideGraph() {
 		waitForElement(fullscreenIcon, 60);
@@ -132,7 +132,7 @@ public class HistoryView extends BaseView {
 	}
 
 	/**
-	 * Method to find text of all events after scrolling up
+	 * Method to find text of all events after scrolling up.
 	 */
 
 	public void scrollAndGetLoggedEventsText() {

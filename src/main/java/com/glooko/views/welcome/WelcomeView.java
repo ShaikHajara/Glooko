@@ -31,7 +31,7 @@ public class WelcomeView extends BaseView {
 	}
 
 	/**
-	 * Method to click on login button in Welcome screen
+	 * Method to click on login button in Welcome screen.
 	 */
 	public void clickLogin() {
 		log.info("Click on Login button in Welcome screen");
