@@ -35,7 +35,7 @@ public class HomeTest extends BaseTest {
 
 	@Test
 	public void getInsulinListText() {
-		waitForPageToLoadUsingThread(1000);
+		waitForSeconds(70);
 		homeview.clickFloatIconFromHomeScreen();
 		assertEquals(homeview.titleInAddEventScreen, "Add Event");
 		homeview.tapInsulinDropDown();

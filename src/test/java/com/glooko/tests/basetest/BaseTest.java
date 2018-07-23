@@ -76,7 +76,7 @@ public class BaseTest {
 			 * "cmd.exe /c start cmd.exe /k \"appium -a 127.0.0.1 -p 4723 --session-override -dc \"{\"\"noReset\"\": \"\"false\"\"}\"\""
 			 * );
 			 */
-			waitForPageToLoadUsingThread(30000);
+			waitForSeconds(3000);
 			driver = new AndroidDriver<MobileElement>(new URL(services_url), cap);
 			System.out.println("Launched app");
 		} catch (final MalformedURLException e) {
@@ -100,13 +100,10 @@ public class BaseTest {
 	 *
 	 * @param timeOutInMilliSeconds
 	 */
-	public void waitForPageToLoadUsingThread(int timeOutInMilliSeconds) {
-
+	public void waitForSeconds(int timeOutInSeconds) {
 		try {
-			Thread.sleep(timeOutInMilliSeconds);
+			Thread.sleep(timeOutInSeconds * 1000);
 		} catch (final InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
 		}
 	}
 }
