@@ -25,7 +25,7 @@ public class BaseView {
 	}
 
 	/**
-	 * Method to find X coordinate of Mobile Element
+	 * Method to get 'X' coordinate of Element
 	 *
 	 * @param ele
 	 * @return
@@ -36,7 +36,7 @@ public class BaseView {
 	}
 
 	/**
-	 * Method to find Y Coordinate of Mobile Element
+	 * Method to get Y Coordinate of Element
 	 *
 	 * @param ele
 	 * @return
