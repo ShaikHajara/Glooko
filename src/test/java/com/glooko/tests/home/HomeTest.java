@@ -33,6 +33,16 @@ public class HomeTest extends BaseTest {
 		homeview.checkNotification();
 	}
 
+	@Test
+	public void getInsulinListText() {
+		waitForSeconds(70);
+		homeview.clickFloatIconFromHomeScreen();
+		assertEquals(homeview.titleInAddEventScreen, "Add Event");
+		homeview.tapInsulinDropDown();
+		assertEquals(homeview.startElementInMedicationList, "Insulin");
+		homeview.getMedicationList();
+	}
+
 	@BeforeMethod
 	public void init() {
 		loginview = new LoginView(driver);

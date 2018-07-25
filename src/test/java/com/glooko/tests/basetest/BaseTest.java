@@ -9,6 +9,7 @@ import org.apache.commons.exec.CommandLine;
 import org.apache.commons.exec.DefaultExecuteResultHandler;
 import org.apache.commons.exec.DefaultExecutor;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
@@ -42,6 +43,24 @@ public class BaseTest {
 		return service_url;
 	}
 
+	/**
+	 * Method to assert two strings.Used to verify two strings whether it is
+	 * equal or not.
+	 *
+	 * @param ele
+	 *            - This is first parameter of assertEquals.
+	 * @param Expected-
+	 *            This is second parameter used to pass expected string.
+	 */
+	public void assertEquals(MobileElement ele, String Expected) {
+		try {
+			final String Actual = ele.getText();
+			Assert.assertEquals(Actual, Expected);
+		} catch (final Exception e) {
+			e.printStackTrace();
+		}
+	}
+
 	@BeforeClass
 	public void setup() {
 		cap = new DesiredCapabilities();
@@ -60,7 +79,7 @@ public class BaseTest {
 			 * "cmd.exe /c start cmd.exe /k \"appium -a 127.0.0.1 -p 4723 --session-override -dc \"{\"\"noReset\"\": \"\"false\"\"}\"\""
 			 * );
 			 */
-			Thread.sleep(30000);
+			waitForSeconds(3000);
 			driver = new AndroidDriver<MobileElement>(new URL(services_url), cap);
 			System.out.println("Launched app");
 		} catch (final MalformedURLException e) {
@@ -76,14 +95,19 @@ public class BaseTest {
 
 	@AfterClass
 	public void stopServer() {
-		/*
-		 * cmd = new CommandLine("cmd"); cmd.addArgument("/c");
-		 * cmd.addArgument("taskkill"); cmd.addArgument("/F");
-		 * cmd.addArgument("/IM"); cmd.addArgument("node.exe"); resulthandler =
-		 * new DefaultExecuteResultHandler(); executor = new DefaultExecutor();
-		 * executor.setExitValue(1); try { executor.execute(cmd, resulthandler);
-		 * } catch (Exception e) { e.printStackTrace(); }
-		 */
 		service.stop();
+	}
+
+	/**
+	 * Method to wait for page to load using thread sleep.
+	 *
+	 * @param timeOutInMilliSeconds-
+	 *            This is timeout parameter used to wait for page to load.
+	 */
+	public void waitForSeconds(int timeOutInSeconds) {
+		try {
+			Thread.sleep(timeOutInSeconds * 1000);
+		} catch (final InterruptedException e) {
+		}
 	}
 }
