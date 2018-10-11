@@ -1,7 +1,6 @@
 package com.glooko.views.history;
 
 import java.io.IOException;
-import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,7 +11,6 @@ import com.glooko.views.BaseView;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
-import io.appium.java_client.TouchAction;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
@@ -126,9 +124,7 @@ public class HistoryView extends BaseView {
 	 */
 	public void hideGraph() {
 		waitForElement(fullscreenIcon, 60);
-		final TouchAction action = new TouchAction(driver);
-		action.tap(hideGraph.getCenter().getX(), hideGraph.getCenter().getY()).waitAction(Duration.ofSeconds(40))
-				.release().perform();
+		tap(hideGraph, 40);
 	}
 
 	/**
@@ -139,9 +135,7 @@ public class HistoryView extends BaseView {
 		findAllLoggedEventsText();
 		final int startElement_X = TextFromList.get(noOfTextViews - 1).getLocation().getX();
 		final int startElement_Y = TextFromList.get(noOfTextViews - 1).getLocation().getY();
-		final TouchAction action = new TouchAction(driver);
-		action.longPress(startElement_X, startElement_Y).waitAction(Duration.ofSeconds(20)).moveTo(dateTime).release()
-				.perform();
+		longPressAndMove(startElement_X, startElement_Y, dateTime, 20);
 		new HistoryView(driver).scrollAndGetLoggedEventsText();
 	}
 }

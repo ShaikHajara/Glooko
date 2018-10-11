@@ -79,7 +79,7 @@ public class BaseTest {
 			 * "cmd.exe /c start cmd.exe /k \"appium -a 127.0.0.1 -p 4723 --session-override -dc \"{\"\"noReset\"\": \"\"false\"\"}\"\""
 			 * );
 			 */
-			waitForSeconds(3000);
+			waitForSeconds(3);
 			driver = new AndroidDriver<MobileElement>(new URL(services_url), cap);
 			System.out.println("Launched app");
 		} catch (final MalformedURLException e) {
