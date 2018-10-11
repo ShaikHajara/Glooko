@@ -4,13 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.openqa.selenium.support.PageFactory;
-import org.testng.Reporter;
 
 import com.glooko.views.BaseView;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
-import io.appium.java_client.TouchAction;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
@@ -111,11 +109,12 @@ public class HomeView extends BaseView {
 		swipeTopToBottom(50);
 		try {
 			if (reminderNotification.isDisplayed()) {
-				Reporter.log("Reminder notification available in notification tray", true);
+
 				reminderNotification.click();
 			}
 		} catch (final Exception e) {
-			Reporter.log("Reminder notification doesn't exists in notification tray", true);
+
+			// true);
 		}
 		driver.navigate().back();
 	}
@@ -125,14 +124,16 @@ public class HomeView extends BaseView {
 	 */
 	public void clickFloatIconFromHomeScreen() {
 		log.info("Tapping on Plus icon");
-		final TouchAction action = new TouchAction(driver);
-		action.tap(1188, 1951).release().perform();
+		tap(1188, 1951);
 	}
 
 	/**
 	 * Method to get list of medications from Insulin dropdown field.
 	 */
 	public void getMedicationList() {
+
+		// medicationNames.forEach(names->System.out.println(names.getText()));
+
 		for (int i = 0; i < medicationNames.size(); i++) {
 			list.add(medicationNames.get(i).getText());
 			log.info(medicationNames.get(i).getText());
@@ -142,7 +143,7 @@ public class HomeView extends BaseView {
 		final String lastElementWithoutPrefix = lastElement.substring(0, lastElement.length() - 1);
 		log.info(lastElementWithoutPrefix);
 		if (!lastElementWithoutPrefix.equalsIgnoreCase("Afrezza")) {
-			scrollUsingElements(medicationNames.get(12), startElementInMedicationList);
+			// scrollUsingElements(medicationNames.get(12), startElementInMedicationList);
 			new HomeView(driver).getMedicationList();
 		} else {
 			log.info("Cannot scroll further");
