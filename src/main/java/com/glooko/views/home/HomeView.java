@@ -15,7 +15,7 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 public class HomeView extends BaseView {
 
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Patterns']")
-	MobileElement startElement;
+	public MobileElement startElement;
 
 	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Today']")
 	MobileElement endElement;
@@ -68,45 +68,62 @@ public class HomeView extends BaseView {
 	@AndroidFindBy(xpath = "//android.widget.LinearLayout/android.view.ViewGroup/android.widget.TextView")
 	public MobileElement titleInAddEventScreen;
 
+	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Profile']")
+	public MobileElement Profile;
+
 	@AndroidFindBy(xpath = "//android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout/android.widget.TextView[0]")
 	MobileElement allInjectionNames;
 
 	@AndroidFindBy(xpath = "//android.widget.ListView/android.widget.LinearLayout")
 	List<MobileElement> noOfLists;
 
+	@AndroidFindBy(id = "title")
+	MobileElement titleProfile;
+
 	@AndroidFindBy(id = "medication_name")
 	List<MobileElement> medicationNames;
+
+	@AndroidFindBy(xpath = "//android.widget.TextView[@text='LOG OUT']")
+	MobileElement logout;
+
+	@AndroidFindBy(id = "button1")
+	MobileElement yesBtnLogOut;
 
 	List<String> list = new ArrayList<String>();
 
 	public HomeView(AppiumDriver<MobileElement> driver) {
 		super(driver);
 		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
+		log.info("Starting Home Test");
 	}
 
 	/**
 	 * Method to Add Food,Insulin,Medication,Exercise events.
 	 */
 	public void addMultipleEvents() {
-
+		waitForElement(startElement, 70);
+		clickFloatIconFromHomeScreen();
 		addFood.sendKeys("Chicken");
 		foodQuantityInCarbs.sendKeys("100");
 		addInsulin.click();
-
+		medicationNames.get(5).click();
+		insulinQuantityInUnits.sendKeys("30");
 		addMedication.click();
-
+		medicationNames.get(5).click();
+		medicationQuantityInMg.sendKeys("50");
 		addExercise.sendKeys("Walk");
 		exerciseInMins.sendKeys("30");
 		addButton.click();
-
 	}
 
 	/**
 	 * Method to check Reminder notification in notification tray.
 	 */
 	public void checkNotification() {
+		log.info("Swiping down Notification tray");
 		waitForElement(startElement, 80);
 		swipeTopToBottom(50);
+		log.info("Checking existence of Reminder Notification");
 		try {
 			if (reminderNotification.isDisplayed()) {
 
@@ -130,24 +147,27 @@ public class HomeView extends BaseView {
 	/**
 	 * Method to get list of medications from Insulin dropdown field.
 	 */
-	public void getMedicationList() {
+	public void getMedicationTextFromInsulinList() {
+		getTextFromDropdownList(medicationNames, startElementInMedicationList);
+	}
 
-		// medicationNames.forEach(names->System.out.println(names.getText()));
+	public void logout() {
 
-		for (int i = 0; i < medicationNames.size(); i++) {
-			list.add(medicationNames.get(i).getText());
-			log.info(medicationNames.get(i).getText());
+		try {
+			Thread.sleep(3000);
+		} catch (final InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-		log.info("Last elememt in list is" + list.get(list.size() - 1));
-		final String lastElement = list.get(list.size() - 1);
-		final String lastElementWithoutPrefix = lastElement.substring(0, lastElement.length() - 1);
-		log.info(lastElementWithoutPrefix);
-		if (!lastElementWithoutPrefix.equalsIgnoreCase("Afrezza")) {
-			// scrollUsingElements(medicationNames.get(12), startElementInMedicationList);
-			new HomeView(driver).getMedicationList();
-		} else {
-			log.info("Cannot scroll further");
-		}
+		swipeDirection("FromLeftEdgeSide", 60);
+		waitForElement(Profile, 40);
+		Profile.click();
+		waitForElement(titleProfile, 40);
+		swipeDirection("UP", 40);
+		waitForElement(logout, 40);
+		logout.click();
+		yesBtnLogOut.click();
+
 	}
 
 	/**
