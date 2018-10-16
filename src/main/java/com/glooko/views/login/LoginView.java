@@ -23,17 +23,18 @@ public class LoginView extends BaseView {
 	public LoginView(AppiumDriver<MobileElement> driver) {
 		super(driver);
 		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
+		log.info("Started login test");
 	}
 
 	/**
 	 * Method to login into app.
 	 *
-	 * @param username-Getting
-	 *            data from excel.
-	 * @param password-Getting
-	 *            data from excel.
+	 * @param username-Getting data from excel.
+	 * @param password-Getting data from excel.
 	 */
 	public void loginToGlooko(String Username, String Password) {
+
+		log.info("Logging into app");
 		waitForElement(email, 60);
 		log.info("email value is" + Username);
 		email.sendKeys(Username);

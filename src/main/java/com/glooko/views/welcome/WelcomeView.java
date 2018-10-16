@@ -35,6 +35,7 @@ public class WelcomeView extends BaseView {
 	 */
 	public void clickLogin() {
 		log.info("Click on Login button in Welcome screen");
+		waitForElement(login, 40);
 		login.click();
 	}
 }

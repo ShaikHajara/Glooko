@@ -1,6 +1,8 @@
 package com.glooko.views;
 
 import java.time.Duration;
+import java.util.List;
+import java.util.TreeSet;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
@@ -47,6 +49,32 @@ public class BaseView {
 	public int findYCoordinate(MobileElement ele) {
 		final int Y = ele.getLocation().getY();
 		return Y;
+	}
+
+	/**
+	 * Method to get text from drop down list
+	 *
+	 * @param ele                is list mobile element
+	 * @param startElementInList is element from where to scroll
+	 */
+	public void getTextFromDropdownList(List<MobileElement> ele, MobileElement startElementInList) {
+
+		new TreeSet<String>();
+		final int medicationListSize = ele.size();
+		ele.forEach(names -> log.info(names.getText()));
+
+		final String lastElement = ele.get(medicationListSize - 1).getText();
+		log.info("last element in list is " + ele.get(medicationListSize - 1).getText());
+		final String lastElementWithoutPrefix = lastElement.substring(0, lastElement.length() - 1);
+		log.info(lastElementWithoutPrefix);
+		if (!lastElementWithoutPrefix.equalsIgnoreCase("Afrezza")) {
+			scrollUsingElements(ele.get(12), startElementInList);
+			new BaseView(driver).getTextFromDropdownList(ele, startElementInList);
+		} else {
+			log.info("Cannot scroll further");
+			driver.navigate().back();
+			driver.navigate().back();
+		}
 	}
 
 	public void longPressAndMove(int X, int Y, MobileElement endElement, int timeOutInSeconds) {
@@ -136,11 +164,11 @@ public class BaseView {
 
 		case "UP":
 			startX = dimension.getWidth() / 2;
-			startY = (int) (dimension.getHeight() * 0.8);
+			startY = (int) (dimension.getHeight() * 0.80);
 			endX = dimension.getWidth() / 2;
-			endY = (int) (dimension.getHeight() * 0.2);
+			endY = (int) (dimension.getHeight() * 0.20);
 			action.longPress(LongPressOptions.longPressOptions().withPosition(PointOption.point(startX, startY)))
-					.waitAction(WaitOptions.waitOptions(Duration.ofSeconds(durationInSeconds)))
+
 					.moveTo(PointOption.point(endX, endY)).release().perform();
 			break;
 		case "DOWN":
@@ -155,9 +183,13 @@ public class BaseView {
 			break;
 		case "LEFT":
 			startX = (int) (dimension.getWidth() * 0.8);
+			log.info(startX + " while swiping left side");
 			startY = dimension.getHeight() / 2;
+			log.info(startY + " while swiping left side");
 			endX = (int) (dimension.getWidth() * 0.2);
+			log.info(endX + " while swiping left side");
 			endY = dimension.getHeight() / 2;
+			log.info(endY + " while swiping LEFT side");
 			action.longPress(LongPressOptions.longPressOptions().withPosition(PointOption.point(startX, startY)))
 					.waitAction(WaitOptions.waitOptions(Duration.ofSeconds(durationInSeconds)))
 					.moveTo(PointOption.point(endX, endY)).release().perform();
@@ -165,11 +197,28 @@ public class BaseView {
 
 		case "RIGHT":
 			startX = (int) (dimension.getWidth() * 0.2);
+			log.info(startX + " while swiping right side");
 			startY = dimension.getHeight() / 2;
+			log.info(startY + " while swiping right side");
 			endX = (int) (dimension.getWidth() * 0.8);
+			log.info(endX + " while swiping right side");
 			endY = dimension.getHeight() / 2;
+			log.info(endY + " while swiping right side");
 			action.longPress(LongPressOptions.longPressOptions().withPosition(PointOption.point(startX, startY)))
 					.waitAction(WaitOptions.waitOptions(Duration.ofSeconds(durationInSeconds)))
+					.moveTo(PointOption.point(endX, endY)).release().perform();
+			break;
+
+		case "FromLeftEdgeSide":
+			startX = dimension.getWidth() / 45;
+			log.info(startX + " while swiping right side");
+			startY = dimension.getHeight() / 4;
+			log.info(startY + " while swiping right side");
+			endX = (int) (dimension.getWidth() * 0.6);
+			log.info(endX + " while swiping right side");
+			endY = (int) (dimension.getHeight() * 0.9);
+			log.info(endY + " while swiping right side");
+			action.longPress(LongPressOptions.longPressOptions().withPosition(PointOption.point(startX, startY)))
 					.moveTo(PointOption.point(endX, endY)).release().perform();
 			break;
 		}

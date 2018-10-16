@@ -18,7 +18,34 @@ public class HomeTest extends BaseTest {
 	HomeView homeview;
 
 	@Test
+	public void addEvents() {
+		waitForSeconds(10);
+		homeview.addMultipleEvents();
+		homeview.logout();
+	}
+
+	@Test
 	public void checkAndtapNotification() {
+		homeview.checkNotification();
+		homeview.logout();
+	}
+
+	@Test
+	public void getInsulinListText() {
+		waitForElement(homeview.startElement, 40);
+		homeview.clickFloatIconFromHomeScreen();
+		assertEquals(homeview.titleInAddEventScreen, "Add Event");
+		homeview.tapInsulinDropDown();
+		assertEquals(homeview.startElementInMedicationList, "Insulin");
+		homeview.getMedicationTextFromInsulinList();
+		homeview.logout();
+	}
+
+	@BeforeMethod
+	public void init() {
+		loginview = new LoginView(driver);
+		welcomeview = new WelcomeView(driver);
+		homeview = new HomeView(driver);
 		welcomeview.clickLogin();
 		try {
 			ReadExcelData.getDataFromExcel("D://LoginFile.xlsx", "Sheet1");
@@ -30,23 +57,5 @@ public class HomeTest extends BaseTest {
 			e.printStackTrace();
 		}
 		loginview.loginToGlooko(ReadExcelData.list.get(0), ReadExcelData.list.get(1));
-		homeview.checkNotification();
-	}
-
-	@Test
-	public void getInsulinListText() {
-		waitForSeconds(7);
-		homeview.clickFloatIconFromHomeScreen();
-		assertEquals(homeview.titleInAddEventScreen, "Add Event");
-		homeview.tapInsulinDropDown();
-		assertEquals(homeview.startElementInMedicationList, "Insulin");
-		homeview.getMedicationList();
-	}
-
-	@BeforeMethod
-	public void init() {
-		loginview = new LoginView(driver);
-		welcomeview = new WelcomeView(driver);
-		homeview = new HomeView(driver);
 	}
 }

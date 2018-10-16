@@ -87,6 +87,7 @@ public class HistoryView extends BaseView {
 	public HistoryView(AppiumDriver<MobileElement> driver) {
 		super(driver);
 		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
+		log.info("Starting History Test");
 	}
 
 	/**
@@ -106,6 +107,7 @@ public class HistoryView extends BaseView {
 
 	public void findAllLoggedEventsText() {
 		findNoOfTextViews();
+
 		for (int i = 0; i < noOfTextViews; i++) {
 			System.out.println(TextFromList.get(i).getText());
 			LoggedEventsText.add(TextFromList.get(i).getText());
