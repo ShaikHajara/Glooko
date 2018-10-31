@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All">
+	<test name="All tests">
+		<classes>
+		<class name="com.glooko.tests.login.LoginTest"></class>  
+		 <class name="com.glooko.tests.home.HomeTest"></class> 
+		<class name="com.glooko.tests.history.HistoryTest"></class>
+		</classes>
+	</test>
+</suite>

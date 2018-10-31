@@ -1,0 +1,145 @@
+14:44:08,725  INFO devpinoyLogger<strong>{1}</strong>:26 - Started login test
+14:44:08,801  INFO devpinoyLogger<strong>{1}</strong>:37 - Click on Login button in Welcome screen
+14:44:08,802  INFO devpinoyLogger<strong>{1}</strong>:298 - Waiting for element Located by By.chained({By.xpath: //android.widget.TextView[contains(@text,'LOGIN')]})
+14:44:09,600  INFO devpinoyLogger<strong>{1}</strong>:40 - Clicked on login button
+14:44:10,711  INFO devpinoyLogger<strong>{1}</strong>:37 - Executing loginToGlooko method
+14:44:10,712  INFO devpinoyLogger<strong>{1}</strong>:38 - Waiting for email element
+14:44:10,712  INFO devpinoyLogger<strong>{1}</strong>:298 - Waiting for element Located by By.chained({By.xpath: //android.widget.EditText[@index='1']})
+14:44:10,867  INFO devpinoyLogger<strong>{1}</strong>:40 - email value isnewacc456@glooko.com
+14:44:16,117  INFO devpinoyLogger<strong>{1}</strong>:42 - Password value isglooko1@34
+14:44:21,697  INFO devpinoyLogger<strong>{1}</strong>:44 - Click on Login button in login screen
+14:45:08,356  INFO devpinoyLogger<strong>{1}</strong>:26 - Started login test
+14:45:08,443  INFO devpinoyLogger<strong>{1}</strong>:97 - Starting Home Test
+14:45:08,444  INFO devpinoyLogger<strong>{1}</strong>:37 - Click on Login button in Welcome screen
+14:45:08,444  INFO devpinoyLogger<strong>{1}</strong>:298 - Waiting for element Located by By.chained({By.xpath: //android.widget.TextView[contains(@text,'LOGIN')]})
+14:45:09,151  INFO devpinoyLogger<strong>{1}</strong>:40 - Clicked on login button
+14:45:09,190  INFO devpinoyLogger<strong>{1}</strong>:37 - Executing loginToGlooko method
+14:45:09,194  INFO devpinoyLogger<strong>{1}</strong>:38 - Waiting for email element
+14:45:09,194  INFO devpinoyLogger<strong>{1}</strong>:298 - Waiting for element Located by By.chained({By.xpath: //android.widget.EditText[@index='1']})
+14:45:10,035  INFO devpinoyLogger<strong>{1}</strong>:40 - email value isnewacc456@glooko.com
+14:45:15,164  INFO devpinoyLogger<strong>{1}</strong>:42 - Password value isglooko1@34
+14:45:20,666  INFO devpinoyLogger<strong>{1}</strong>:44 - Click on Login button in login screen
+14:45:31,420  INFO devpinoyLogger<strong>{1}</strong>:104 - Executing addMultipleEvents method
+14:45:31,421  INFO devpinoyLogger<strong>{1}</strong>:298 - Waiting for element Located by By.chained({By.xpath: //android.widget.TextView[@text='Patterns']})
+14:45:46,694  INFO devpinoyLogger<strong>{1}</strong>:156 - Tapping on Plus icon
+14:45:46,830  INFO devpinoyLogger<strong>{1}</strong>:107 - Clicked on float icon
+14:45:46,831  INFO devpinoyLogger<strong>{1}</strong>:108 - Entering text in food field
+14:45:54,219  INFO devpinoyLogger<strong>{1}</strong>:110 - Entering food Quantity
+14:46:00,438  INFO devpinoyLogger<strong>{1}</strong>:112 - Clicking on AddInsulin
+14:46:01,477  INFO devpinoyLogger<strong>{1}</strong>:114 - Selecting medication from the list
+14:46:04,076  INFO devpinoyLogger<strong>{1}</strong>:116 - Entering insulin quantity
+14:46:09,614  INFO devpinoyLogger<strong>{1}</strong>:118 - clicking on addMedication
+14:46:10,557  INFO devpinoyLogger<strong>{1}</strong>:120 - Selecting medication from the list
+14:46:12,272  INFO devpinoyLogger<strong>{1}</strong>:122 - Entering medication quantity
+14:46:17,591  INFO devpinoyLogger<strong>{1}</strong>:124 - entering text in addExercise field
+14:46:25,752  INFO devpinoyLogger<strong>{1}</strong>:126 - Entering text in exercise field
+14:46:31,695  INFO devpinoyLogger<strong>{1}</strong>:128 - Clicking on addbutton
+14:46:36,001  INFO devpinoyLogger<strong>{1}</strong>:175 - Executing logout test
+14:46:36,002  INFO devpinoyLogger<strong>{1}</strong>:176 - Swiping right side
+14:46:36,033  INFO devpinoyLogger<strong>{1}</strong>:214 - 32 while swiping right side
+14:46:36,034  INFO devpinoyLogger<strong>{1}</strong>:216 - 598 while swiping right side
+14:46:36,034  INFO devpinoyLogger<strong>{1}</strong>:218 - 864 while swiping right side
+14:46:36,034  INFO devpinoyLogger<strong>{1}</strong>:220 - 2152 while swiping right side
+14:46:37,946  INFO devpinoyLogger<strong>{1}</strong>:298 - Waiting for element Located by By.chained({By.xpath: //android.widget.TextView[@text='Profile']})
+14:46:38,940  INFO devpinoyLogger<strong>{1}</strong>:179 - Clicking on Profile icon
+14:46:39,316  INFO devpinoyLogger<strong>{1}</strong>:298 - Waiting for element Located by By.chained({By.id: title})
+14:46:40,701  INFO devpinoyLogger<strong>{1}</strong>:182 - Scrolling up
+14:46:42,796  INFO devpinoyLogger<strong>{1}</strong>:298 - Waiting for element Located by By.chained({By.xpath: //android.widget.TextView[@text='LOG OUT']})
+14:46:43,020  INFO devpinoyLogger<strong>{1}</strong>:185 - Clicking on logout button
+14:46:43,586  INFO devpinoyLogger<strong>{1}</strong>:187 - Tapping on Yes from confirmation alert
+14:46:44,627  INFO devpinoyLogger<strong>{1}</strong>:26 - Started login test
+14:46:44,670  INFO devpinoyLogger<strong>{1}</strong>:97 - Starting Home Test
+14:46:44,671  INFO devpinoyLogger<strong>{1}</strong>:37 - Click on Login button in Welcome screen
+14:46:44,671  INFO devpinoyLogger<strong>{1}</strong>:298 - Waiting for element Located by By.chained({By.xpath: //android.widget.TextView[contains(@text,'LOGIN')]})
+14:46:51,290  INFO devpinoyLogger<strong>{1}</strong>:40 - Clicked on login button
+14:46:51,317  INFO devpinoyLogger<strong>{1}</strong>:37 - Executing loginToGlooko method
+14:46:51,318  INFO devpinoyLogger<strong>{1}</strong>:38 - Waiting for email element
+14:46:51,318  INFO devpinoyLogger<strong>{1}</strong>:298 - Waiting for element Located by By.chained({By.xpath: //android.widget.EditText[@index='1']})
+14:46:52,042  INFO devpinoyLogger<strong>{1}</strong>:40 - email value isnewacc456@glooko.com
+14:46:57,257  INFO devpinoyLogger<strong>{1}</strong>:42 - Password value isglooko1@34
+14:47:02,946  INFO devpinoyLogger<strong>{1}</strong>:44 - Click on Login button in login screen
+14:47:03,747  INFO devpinoyLogger<strong>{1}</strong>:136 - Swiping down Notification tray
+14:47:03,747  INFO devpinoyLogger<strong>{1}</strong>:298 - Waiting for element Located by By.chained({By.xpath: //android.widget.TextView[@text='Patterns']})
+14:48:20,668  INFO devpinoyLogger<strong>{1}</strong>:139 - Checking existence of Reminder Notification
+14:48:25,232  INFO devpinoyLogger<strong>{1}</strong>:175 - Executing logout test
+14:48:25,232  INFO devpinoyLogger<strong>{1}</strong>:176 - Swiping right side
+14:48:25,252  INFO devpinoyLogger<strong>{1}</strong>:214 - 32 while swiping right side
+14:48:25,252  INFO devpinoyLogger<strong>{1}</strong>:216 - 598 while swiping right side
+14:48:25,252  INFO devpinoyLogger<strong>{1}</strong>:218 - 864 while swiping right side
+14:48:25,252  INFO devpinoyLogger<strong>{1}</strong>:220 - 2152 while swiping right side
+14:48:27,132  INFO devpinoyLogger<strong>{1}</strong>:298 - Waiting for element Located by By.chained({By.xpath: //android.widget.TextView[@text='Profile']})
+14:48:28,163  INFO devpinoyLogger<strong>{1}</strong>:179 - Clicking on Profile icon
+14:48:28,548  INFO devpinoyLogger<strong>{1}</strong>:298 - Waiting for element Located by By.chained({By.id: title})
+14:48:29,866  INFO devpinoyLogger<strong>{1}</strong>:182 - Scrolling up
+14:48:31,829  INFO devpinoyLogger<strong>{1}</strong>:298 - Waiting for element Located by By.chained({By.xpath: //android.widget.TextView[@text='LOG OUT']})
+14:48:32,071  INFO devpinoyLogger<strong>{1}</strong>:185 - Clicking on logout button
+14:48:32,591  INFO devpinoyLogger<strong>{1}</strong>:187 - Tapping on Yes from confirmation alert
+14:48:33,672  INFO devpinoyLogger<strong>{1}</strong>:26 - Started login test
+14:48:33,706  INFO devpinoyLogger<strong>{1}</strong>:97 - Starting Home Test
+14:48:33,706  INFO devpinoyLogger<strong>{1}</strong>:37 - Click on Login button in Welcome screen
+14:48:33,706  INFO devpinoyLogger<strong>{1}</strong>:298 - Waiting for element Located by By.chained({By.xpath: //android.widget.TextView[contains(@text,'LOGIN')]})
+14:48:39,276  INFO devpinoyLogger<strong>{1}</strong>:40 - Clicked on login button
+14:48:39,329  INFO devpinoyLogger<strong>{1}</strong>:37 - Executing loginToGlooko method
+14:48:39,330  INFO devpinoyLogger<strong>{1}</strong>:38 - Waiting for email element
+14:48:39,331  INFO devpinoyLogger<strong>{1}</strong>:298 - Waiting for element Located by By.chained({By.xpath: //android.widget.EditText[@index='1']})
+14:48:39,915  INFO devpinoyLogger<strong>{1}</strong>:40 - email value isnewacc456@glooko.com
+14:48:45,447  INFO devpinoyLogger<strong>{1}</strong>:42 - Password value isglooko1@34
+14:48:51,060  INFO devpinoyLogger<strong>{1}</strong>:44 - Click on Login button in login screen
+14:49:15,032  INFO devpinoyLogger<strong>{1}</strong>:156 - Tapping on Plus icon
+14:49:19,052  INFO devpinoyLogger<strong>{1}</strong>:64 - Insulin (Regular)
+14:49:19,133  INFO devpinoyLogger<strong>{1}</strong>:64 - Lantus®
+14:49:19,167  INFO devpinoyLogger<strong>{1}</strong>:64 - Avandia®
+14:49:19,209  INFO devpinoyLogger<strong>{1}</strong>:64 - DiaBeta®
+14:49:19,232  INFO devpinoyLogger<strong>{1}</strong>:64 - Apidra®
+14:49:19,269  INFO devpinoyLogger<strong>{1}</strong>:64 - Basaglar®
+14:49:19,326  INFO devpinoyLogger<strong>{1}</strong>:64 - Humalog®
+14:49:19,383  INFO devpinoyLogger<strong>{1}</strong>:64 - Insulin (Regular)
+14:49:19,421  INFO devpinoyLogger<strong>{1}</strong>:64 - Insulin (NPH)
+14:49:19,449  INFO devpinoyLogger<strong>{1}</strong>:64 - Lantus®
+14:49:19,479  INFO devpinoyLogger<strong>{1}</strong>:64 - Levemir®
+14:49:19,502  INFO devpinoyLogger<strong>{1}</strong>:64 - NovoLog®
+14:49:19,528  INFO devpinoyLogger<strong>{1}</strong>:64 - Toujeo®
+14:49:21,237  INFO devpinoyLogger<strong>{1}</strong>:67 - last element in list is Toujeo®
+14:49:21,237  INFO devpinoyLogger<strong>{1}</strong>:69 - Toujeo
+14:49:24,635  INFO devpinoyLogger<strong>{1}</strong>:64 - Toujeo®
+14:49:24,676  INFO devpinoyLogger<strong>{1}</strong>:64 - Tresiba®
+14:49:24,730  INFO devpinoyLogger<strong>{1}</strong>:64 - NovoLog® Mix 70/30
+14:49:24,762  INFO devpinoyLogger<strong>{1}</strong>:64 - Novolin® 70/30
+14:49:24,790  INFO devpinoyLogger<strong>{1}</strong>:64 - Novolin® R
+14:49:24,817  INFO devpinoyLogger<strong>{1}</strong>:64 - Novolin® N
+14:49:24,860  INFO devpinoyLogger<strong>{1}</strong>:64 - Humalog® Mix 75/25™
+14:49:24,885  INFO devpinoyLogger<strong>{1}</strong>:64 - Humulin® N NPH
+14:49:24,913  INFO devpinoyLogger<strong>{1}</strong>:64 - Humulin® R
+14:49:24,940  INFO devpinoyLogger<strong>{1}</strong>:64 - Humalog® Mix 50/50™
+14:49:24,965  INFO devpinoyLogger<strong>{1}</strong>:64 - Humulin® 70/30
+14:49:24,992  INFO devpinoyLogger<strong>{1}</strong>:64 - Soliqua® 100/33
+14:49:25,018  INFO devpinoyLogger<strong>{1}</strong>:64 - Xultophy® 100/3.6
+14:49:25,052  INFO devpinoyLogger<strong>{1}</strong>:64 - Afrezza®
+14:49:27,230  INFO devpinoyLogger<strong>{1}</strong>:67 - last element in list is Afrezza®
+14:49:27,231  INFO devpinoyLogger<strong>{1}</strong>:69 - Afrezza
+14:49:27,231  INFO devpinoyLogger<strong>{1}</strong>:74 - Cannot scroll further
+14:49:31,775  INFO devpinoyLogger<strong>{1}</strong>:175 - Executing logout test
+14:49:31,775  INFO devpinoyLogger<strong>{1}</strong>:176 - Swiping right side
+14:49:31,789  INFO devpinoyLogger<strong>{1}</strong>:214 - 32 while swiping right side
+14:49:31,789  INFO devpinoyLogger<strong>{1}</strong>:216 - 598 while swiping right side
+14:49:31,789  INFO devpinoyLogger<strong>{1}</strong>:218 - 864 while swiping right side
+14:49:31,790  INFO devpinoyLogger<strong>{1}</strong>:220 - 2152 while swiping right side
+14:49:33,680  INFO devpinoyLogger<strong>{1}</strong>:298 - Waiting for element Located by By.chained({By.xpath: //android.widget.TextView[@text='Profile']})
+14:49:34,631  INFO devpinoyLogger<strong>{1}</strong>:179 - Clicking on Profile icon
+14:49:35,002  INFO devpinoyLogger<strong>{1}</strong>:298 - Waiting for element Located by By.chained({By.id: title})
+14:49:36,263  INFO devpinoyLogger<strong>{1}</strong>:182 - Scrolling up
+14:49:38,271  INFO devpinoyLogger<strong>{1}</strong>:298 - Waiting for element Located by By.chained({By.xpath: //android.widget.TextView[@text='LOG OUT']})
+14:49:38,480  INFO devpinoyLogger<strong>{1}</strong>:185 - Clicking on logout button
+14:49:39,089  INFO devpinoyLogger<strong>{1}</strong>:187 - Tapping on Yes from confirmation alert
+14:50:18,991  INFO devpinoyLogger<strong>{1}</strong>:26 - Started login test
+14:50:19,033  INFO devpinoyLogger<strong>{1}</strong>:90 - Starting History Test
+14:50:19,033  INFO devpinoyLogger<strong>{1}</strong>:37 - Click on Login button in Welcome screen
+14:50:19,034  INFO devpinoyLogger<strong>{1}</strong>:298 - Waiting for element Located by By.chained({By.xpath: //android.widget.TextView[contains(@text,'LOGIN')]})
+14:50:19,596  INFO devpinoyLogger<strong>{1}</strong>:40 - Clicked on login button
+14:50:19,620  INFO devpinoyLogger<strong>{1}</strong>:37 - Executing loginToGlooko method
+14:50:19,620  INFO devpinoyLogger<strong>{1}</strong>:38 - Waiting for email element
+14:50:19,620  INFO devpinoyLogger<strong>{1}</strong>:298 - Waiting for element Located by By.chained({By.xpath: //android.widget.EditText[@index='1']})
+14:50:20,387  INFO devpinoyLogger<strong>{1}</strong>:40 - email value isnewacc456@glooko.com
+14:50:25,580  INFO devpinoyLogger<strong>{1}</strong>:42 - Password value isglooko1@34
+14:50:31,126  INFO devpinoyLogger<strong>{1}</strong>:44 - Click on Login button in login screen
+14:50:31,893  INFO devpinoyLogger<strong>{1}</strong>:298 - Waiting for element Located by By.chained({By.id: history_button})
