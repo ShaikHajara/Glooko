@@ -126,7 +126,7 @@ public class HistoryView extends BaseView {
 	 */
 	public void hideGraph() {
 		
-		press(hideGraph, 40);
+		press(hideGraph, 10);
 	}
 
 	/**
