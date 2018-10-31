@@ -125,8 +125,8 @@ public class HistoryView extends BaseView {
 	 * Method to hide graph in History tab.
 	 */
 	public void hideGraph() {
-		waitForElement(fullscreenIcon, 60);
-		tap(hideGraph, 40);
+		
+		press(hideGraph, 40);
 	}
 
 	/**

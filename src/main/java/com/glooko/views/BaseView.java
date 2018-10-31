@@ -59,7 +59,6 @@ public class BaseView {
 	 */
 	public void getTextFromDropdownList(List<MobileElement> ele, MobileElement startElementInList) {
 
-		new TreeSet<String>();
 		final int medicationListSize = ele.size();
 		ele.forEach(names -> log.info(names.getText()));
 
@@ -269,9 +268,9 @@ public class BaseView {
 		action.tap(PointOption.point(X, Y)).release().perform();
 	}
 
-	public void tap(MobileElement ele, int timeOutInSec) {
+	public void press(MobileElement ele, int timeOutInSec) {
 		final TouchAction action = new TouchAction(driver);
-		action.tap(PointOption.point(ele.getCenter().getX(), ele.getCenter().getY()))
+		action.press(PointOption.point(findXCoordinate(ele),findYCoordinate(ele)))
 				.waitAction(WaitOptions.waitOptions(Duration.ofSeconds(timeOutInSec))).release().perform();
 
 	}

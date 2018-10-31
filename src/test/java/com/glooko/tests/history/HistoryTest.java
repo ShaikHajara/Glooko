@@ -43,7 +43,7 @@ public class HistoryTest extends BaseTest {
 		// historyview.findAllLoggedEventsText();
 	}
 
-	@Test
+	//@Test
 	public void hideGraphInHistoryView() {
 		try {
 			historyview.clickHistoryTab();
